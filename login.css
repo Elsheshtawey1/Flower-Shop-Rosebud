@@ -1,0 +1,283 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-bg-color: #4CAF50;
+    --search-border-color: #FFD700;
+    --hover-color: #333;
+    --primary-color: #ff3b3b;
+    --secondary-color: #ff7f7f;
+    --link-color: #1a73e8;
+    --link-hover-color: #0c58a1;
+    --dark-background: #181818;
+    --dark-text-color: #ffffff;
+    --black-color: rgb(0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+body {
+    font-family: system-ui;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    user-select: none;
+    transition: background-color 0.5s, color 0.5s;
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    --background-color: var(--dark-background);
+    --text-color: var(--dark-text-color);
+}
+
+#toggle-dark-mode {
+    cursor: pointer;
+    transition: color 0.5s ease;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    z-index: 5;
+    width: 100%;
+    margin: 0px 20px;
+    overflow: hidden;
+}
+
+header .navbar .company-logo {
+    width: 120px !important;
+    height: auto;
+}
+
+header .navbar .navbar-nav .nav-link {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Lora, sans-serif;
+}
+
+body.dark-mode header .navbar .navbar-nav .nav-link,
+body.dark-mode .fa-bars:before,
+body.dark-mode .fa-navicon:before,
+body.dark-mode header .navbar .navbar-toggler {
+    color: white;
+    border-color: rgb(255, 255, 255);
+}
+
+header .navbar .navbar-nav .nav-link:focus {
+    color: var(--hover-color);
+    background-color: #e9d7d775;
+}
+
+header .navbar .navbar-nav .nav-link:hover {
+    background-color: #e9d7d775;
+}
+
+header .navbar .navbar-toggler {
+    color: white;
+    font-size: 20px;
+    border-color: white;
+    margin: 0 15px;
+}
+
+header .navbar-toggler:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.fa-moon:before {
+    content: "\f186";
+    background: var(--button-bg-color);
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.fa-cart-shopping:before,
+.fa-shopping-cart:before {
+    content: "\f07a";
+    background: var(--button-bg-color);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.fa-bars:before,
+.fa-navicon:before {
+    content: "\f0c9";
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.offcanvas-body p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.offcanvas-body {
+    background-image: url(img/img01.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width: 990px) {
+    header .navbar .search {
+        border-left: none;
+        cursor: pointer;
+        transition: all 0.5s;
+        padding: 0 !important;
+        margin: 25px 0 20px 0 !important;
+    }
+
+    .fa-moon:before {
+        content: "\f186";
+        background: var(--button-bg-color);
+        padding: 9px;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+
+    .fa-cart-shopping:before,
+    .fa-shopping-cart:before {
+        content: "\f07a";
+        background: var(--button-bg-color);
+        padding: 9px;
+        border-radius: 50%;
+        font-size: 18px;
+        margin-right: 10px !important;
+    }
+
+    header .navbar .navbar-nav .nav-link {
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 1px solid #1a1717;
+    }
+}
+
+.form {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0;
+    width: 100%;
+}
+
+.login-container {
+    width: 490px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+    background: transparent;
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+a {
+    color: rgb(255, 255, 255) !important;
+    text-decoration: none !important;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px !important;
+    font-weight: 500;
+    color: black;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+    color: #ffffff;
+}
+
+.form .login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-bg-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.form .login-container button:hover {
+    background-color: #218838;
+}
+
+.form .social-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form .social-login h3 {
+    color: black;
+    margin: 0 0 15px 0;
+}
+
+.social-buttons button {
+    background-color: #777;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.social-buttons button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-height: 500px) {
+    .login-container {
+        width: 490px;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.041);
+        background: transparent;
+        backdrop-filter: blur(1px);
+    }
+}
