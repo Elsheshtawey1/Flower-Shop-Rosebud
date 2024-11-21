@@ -5,12 +5,12 @@
     --search-border-color: #FFD700;
     --hover-color: #333;
     --primary-color: #ff3b3b;
-    --secondary-color: #ff7f7f;
     --link-color: #1a73e8;
     --link-hover-color: #0c58a1;
     --dark-background: #181818;
     --dark-text-color: #ffffff;
     --black-color: rgb(0, 0, 0);
+    --form-items-color: rgba(251, 116, 106, 0.915);
 }
 
 * {
@@ -30,12 +30,9 @@ body {
     color: var(--text-color);
     user-select: none;
     transition: background-color 0.5s, color 0.5s;
-    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background: var(--background-color);
     overflow-x: hidden;
+
 }
 
 body.dark-mode {
@@ -56,9 +53,11 @@ body.dark-mode {
 header {
     z-index: 5;
     width: 100%;
-    margin: 0px 20px;
     overflow: hidden;
+    background: rgb(251 128 119);
+    height: 70px;
 }
+
 
 header .navbar .company-logo {
     width: 120px !important;
@@ -66,7 +65,7 @@ header .navbar .company-logo {
 }
 
 header .navbar .navbar-nav .nav-link {
-    color: var(--text-color);
+    color: var(--text-color) !important;
     font-size: 18px;
     font-weight: 500;
     font-family: Lora, sans-serif;
@@ -177,8 +176,10 @@ header .navbar-toggler:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4px 0;
+    margin: 5px 0;
     width: 100%;
+    background-size: 100px;
+    background-repeat: repeat-y;
 }
 
 .login-container {
@@ -186,7 +187,9 @@ header .navbar-toggler:focus {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
-    background: transparent;
+    background-image: url(../image/img13.png);
+    background-repeat: repeat-y;
+    background-position: center;
     backdrop-filter: blur(5px);
 }
 
@@ -216,31 +219,33 @@ label {
 .form input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--form-items-color);
     border-radius: 4px;
-    background: transparent;
+    background: var(--background-color);
     outline: none;
-    color: #ffffff;
+    color: #000000;
 }
 
 .form .login-container button {
     width: 100%;
     padding: 10px;
-    background-color: var(--button-bg-color);
+    background-color: var(--form-items-color);
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 10px;
+    transition: background-color .2s ease-in-out;
 }
 
 .form .login-container button:hover {
-    background-color: #218838;
+    background-color: rgb(251, 116, 106);
 }
 
 .form .social-login {
     text-align: center;
     margin-top: 20px;
+
 }
 
 .form .social-buttons {

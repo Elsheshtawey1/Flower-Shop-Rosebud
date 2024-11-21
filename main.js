@@ -4,13 +4,12 @@ toggleButton.addEventListener("click", () => {
 
   if (document.body.classList.contains("dark-mode")) {
     toggleButton.classList.remove("fa-moon");
-    toggleButton.classList.add("fa-sun"); 
+    toggleButton.classList.add("fa-sun");
   } else {
     toggleButton.classList.remove("fa-sun");
-    toggleButton.classList.add("fa-moon"); 
+    toggleButton.classList.add("fa-moon");
   }
 });
-
 
 window.onscroll = function () {
   scrollFunction();
@@ -20,17 +19,15 @@ function scrollFunction() {
   let scrollTopBtn = document.getElementById("scrollTopBtn");
 
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollTopBtn.style.display = "block"; 
+    scrollTopBtn.style.display = "block";
   } else {
-    scrollTopBtn.style.display = "none"; 
-  } 
+    scrollTopBtn.style.display = "none";
+  }
 }
-
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
 
 function animateCounter() {
   const counters = document.querySelectorAll("h3[data-target]");
@@ -39,23 +36,22 @@ function animateCounter() {
     const count = +counter.innerText;
 
     if (count < target) {
-      const increment = target / 200; 
-      const delay = 300; 
+      const increment = target / 200;
+      const delay = 300;
 
-     
       setTimeout(() => {
         const updateCounter = () => {
           const currentCount = +counter.innerText;
 
           if (currentCount < target) {
             counter.innerText = Math.ceil(currentCount + increment);
-            setTimeout(updateCounter, 15); 
+            setTimeout(updateCounter, 15);
           } else {
-            counter.innerText = target; 
+            counter.innerText = target;
           }
         };
 
-        updateCounter(); 
+        updateCounter();
       }, delay);
     } else {
       counter.innerText = target;
@@ -68,14 +64,22 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        animateCounter(); 
+        animateCounter();
       }
     });
   },
   { threshold: 0.5 }
-); 
+);
 
 observer.observe(section);
+// lazy loading
+window.onload = function () {
+  const images = document.querySelectorAll("img");
+
+  images.forEach(function (img) {
+    img.setAttribute("loading", "lazy");
+  });
+};
 
 // login
 
@@ -110,7 +114,7 @@ function validateForm() {
   }
 
   // Validate email format
-  if (email.indexOf('@') === -1 || email.length < 10) {
+  if (email.indexOf("@") === -1 || email.length < 10) {
     text += "PLEASE ENTER A VALID EMAIL<br>";
   }
 
